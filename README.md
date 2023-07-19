@@ -23,10 +23,13 @@ Code Platoon wants to create an E-Commerce site that will offer new Code Platoon
 
 - Clients will be able to `sign up`, `log in`, `log out`, and confirm their information.
 
-```bash 
+```bash
 http://127.0.0.1:8000/api/v1/users/signup/  name="signup"
+# signup will create a user, the users cart, and the users token
 http://127.0.0.1:8000/api/v1/users/login/   name="login"
+# login will get or create a users token
 http://127.0.0.1:8000/api/v1/users/logout/  name="logout"
+# logout will delete a users token
 http://127.0.0.1:8000/api/v1/users/info/    name="info"
 ```
 
