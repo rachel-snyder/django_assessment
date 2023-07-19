@@ -1,0 +1,101 @@
+[
+  {
+    "model": "item_app.item",
+    "pk": 1,
+    "fields": {
+      "price": "999.99",
+      "name": "MacBook Pro",
+      "category": "Electronics"
+    }
+  },
+  {
+    "model": "item_app.item",
+    "pk": 2,
+    "fields": {
+      "price": "300.02",
+      "name": "Dell XPS 13",
+      "category": "Electronics"
+    }
+  },
+  {
+    "model": "item_app.item",
+    "pk": 3,
+    "fields": {
+      "price": "200.30",
+      "name": "Lenovo ThinkPad",
+      "category": "Electronics"
+    }
+  },
+  {
+    "model": "item_app.item",
+    "pk": 4,
+    "fields": {
+      "price": "250.57",
+      "name": "Clean Code: A Handbook of Agile Software Craftsmanship",
+      "category": "Books"
+    }
+  },
+  {
+    "model": "item_app.item",
+    "pk": 5,
+    "fields": {
+      "price": "30.27",
+      "name": "Cracking the Coding Interview",
+      "category": "Books"
+    }
+  },
+  {
+    "model": "item_app.item",
+    "pk": 6,
+    "fields": {
+      "price": "30.01",
+      "name": "Python Crash Course",
+      "category": "Books"
+    }
+  },
+  {
+    "model": "item_app.item",
+    "pk": 7,
+    "fields": {
+      "price": "200.03",
+      "name": "External Monitor",
+      "category": "Electronics"
+    }
+  },
+  {
+    "model": "item_app.item",
+    "pk": 8,
+    "fields": {
+      "price": "100.07",
+      "name": "Noise-Canceling Headphones",
+      "category": "Electronics"
+    }
+  },
+  {
+    "model": "item_app.item",
+    "pk": 9,
+    "fields": {
+      "price": "50.10",
+      "name": "Code Editor Subscription",
+      "category": "Other"
+    }
+  },
+  {
+    "model": "item_app.item",
+    "pk": 10,
+    "fields": {
+      "price": "20.03",
+      "name": "Wireless Keyboard and Mouse",
+      "category": "Other"
+    }
+  },
+  {
+    "model": "item_app.item",
+    "pk": 11,
+    "fields": {
+      "price": "15.34",
+      "name": "Notepad and Pen Set",
+      "category": "Other"
+    }
+  }
+]
