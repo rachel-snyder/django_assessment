@@ -3,7 +3,9 @@ Django==4.2.3
 djangorestframework==3.14.0
 psycopg==3.1.9
 psycopg-binary==3.1.9
+Pygments==2.15.1
 python-dotenv==1.0.0
 pytz==2023.3
+redgreenunittest==0.1.1
 sqlparse==0.4.4
 typing_extensions==4.7.1
