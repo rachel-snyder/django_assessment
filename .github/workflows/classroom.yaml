@@ -33,6 +33,10 @@ jobs:
         sudo apt-get install python3-pip
     - name: Install dependencies
       run: pip install -r ecom_proj/requirements.txt
+    - name: Migrations
+      run: |
+        python ecom_proj/manage.py makemigrations
+        python ecom_proj/manage.py migrate
     - name: Autograder
       uses: education/autograding@v1
       continue-on-error: true
