@@ -1,0 +1,144 @@
+{
+    "tests": [
+      {
+        "name": "test 1",
+        "setup": "",
+        "run": "python ecom_proj.manage.py test tests.test_01_user_sign_up",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 4,
+        "points": 1
+      },
+      {
+        "name": "test 2",
+        "setup": "",
+        "run": "python ecom_proj.manage.py test tests.test_02_user_sign_in",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 4,
+        "points": 1
+      },
+      {
+        "name": "test 3",
+        "setup": "",
+        "run": "python ecom_proj.manage.py test tests.test_03_user_info",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 4,
+        "points": 1
+      },
+      {
+        "name": "test 4",
+        "setup": "",
+        "run": "python ecom_proj.manage.py test tests.test_04_user_logout",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 4,
+        "points": 1
+      },
+      {
+        "name": "test 5",
+        "setup": "",
+        "run": "python ecom_proj.manage.py test tests.test_05_items_all",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 4,
+        "points": 1
+      },
+      {
+        "name": "test 6",
+        "setup": "",
+        "run": "python ecom_proj.manage.py test tests.test_06_item_by_category",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 4,
+        "points": 1
+      },
+      {
+        "name": "test 7",
+        "setup": "",
+        "run": "python ecom_proj.manage.py test tests.test_07_item_by_id",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 4,
+        "points": 1
+      },
+      {
+        "name": "test 8",
+        "setup": "",
+        "run": "python ecom_proj.manage.py test tests.test_08_item_added_to_cart",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 4,
+        "points": 1
+      },
+      {
+        "name": "test 9",
+        "setup": "",
+        "run": "python ecom_proj.manage.py test tests.test_09_item_remove_from_cart",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 4,
+        "points": 1
+      },
+      {
+        "name": "test 10",
+        "setup": "",
+        "run": "python ecom_proj.manage.py test tests.test_10_cart_items_and_price",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 4,
+        "points": 1
+      },
+      {
+        "name": "test 11",
+        "setup": "",
+        "run": "python ecom_proj.manage.py test tests.test_11_increase_cart_item_quantity",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 4,
+        "points": 1
+      },
+      {
+        "name": "test 12",
+        "setup": "",
+        "run": "python ecom_proj.manage.py test tests.test_12_decrease_cart_item_quantity",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 4,
+        "points": 1
+      },
+      {
+        "name": "test 13",
+        "setup": "",
+        "run": "python ecom_proj.manage.py test tests.test_13_delete_item_quantity_zero",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 4,
+        "points": 1
+      },
+      {
+        "name": "test 14",
+        "setup": "",
+        "run": "python ecom_proj.manage.py test tests.test_14_item_remove",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 4,
+        "points": 1
+      }
+    ]
+  }

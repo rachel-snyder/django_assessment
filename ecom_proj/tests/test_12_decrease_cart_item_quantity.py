@@ -4,7 +4,6 @@ from rest_framework.test import APITestCase
 import json
 
 
-
 """
 This test will send a post request to signup to first create a new user and 
 acquire the token provided in the response. Then it will set the token under the 
@@ -15,12 +14,12 @@ The client will send a mix of POST and DELETE request to the endpoint with the n
 the clients cart. 
 
 The client will then send two PUT requests to the endpoint with the name of "cart_item_quantity"
-and pass in "add" as the method and the number 15 as the cart_item_id to increment the quantity 
-of the Cart_item with the ID of 15 to 3.
+and pass in "add" as the method and the number 3 as the cart_item_id to increment the quantity 
+of the Cart_item with the ID of 3 to 3.
 
 The client will then send a third and final PUT request to the endpoint with the name of "cart_item_quantity"
-and pass in "sub" as the method and the number 15 as the cart_item_id to decrement the quantity 
-of the Cart_item with the ID of 15 to 2. 
+and pass in "sub" as the method and the number 3 as the cart_item_id to decrement the quantity 
+of the Cart_item with the ID of 3 to 2. 
 
 The client will send a GET request to the endpoint with the name of "cart" to see their updated cart items 
 and price.
@@ -29,7 +28,7 @@ This endpoint must return the following Response status code of 200
 answer = {
     "cart_items": [
         {
-            "id": 13,
+            "id": 1,
             "item": {
                 "id": 10,
                 "category": "Other",
@@ -39,7 +38,7 @@ answer = {
             "quantity": 1,
         },
         {
-            "id": 14,
+            "id": 2,
             "item": {
                 "id": 9,
                 "category": "Other",
@@ -49,7 +48,7 @@ answer = {
             "quantity": 1,
         },
         {
-            "id": 15,
+            "id": 3,
             "item": {
                 "id": 3,
                 "category": "Electronics",
@@ -59,7 +58,7 @@ answer = {
             "quantity": 2,
         },
         {
-            "id": 16,
+            "id": 4,
             "item": {
                 "id": 5,
                 "category": "Books",
@@ -92,9 +91,9 @@ class Test_decrease_cart_item(APITestCase):
         self.client.post(reverse("an_item", args=[9]))
         self.client.post(reverse("an_item", args=[3]))
         self.client.post(reverse("an_item", args=[5]))
-        self.client.put(reverse("cart_item_quantity", args=['add', 15]))
-        self.client.put(reverse("cart_item_quantity", args=['add', 15]))
-        self.client.put(reverse("cart_item_quantity", args=['sub', 15]))
+        self.client.put(reverse("cart_item_quantity", args=["add", 3]))
+        self.client.put(reverse("cart_item_quantity", args=["add", 3]))
+        self.client.put(reverse("cart_item_quantity", args=["sub", 3]))
         response = self.client.get(reverse("cart"))
         # print(response.content)
         with self.subTest():

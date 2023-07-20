@@ -81,9 +81,14 @@ http://127.0.0.1:8000/api/v1/cart/<int:cart_item_id>/  name="delete_item"
 - Change directory into `ecom_proj`
 - Install dependencies from `requirements.txt`
 - Install fixture data in `item_app/fixtures`
-- run the test directory with `python manage.py test tests`
 - START with the `Client` model in `user_app.models`
 
 ## Test Details
 
-Each test is located within it's own file and holds a short description of what it is that it's expecting from your product. Please go through each test case and take the time to read them before attempting to code the next feature. The test suite is designed to run from top to bottom.
+Each test is located within it's own file and holds a short description of the behavior it's expecting from your product. Please go through each test case and take the time to read them before attempting to code the next feature. The test suite is designed to run from top to bottom.
+
+**EACH TEST MUST BE RAN INDIVIDUALLY WITH THE FOLLOWING COMMAND**
+
+```bash
+python manage.py test tests.<name_of_test_file> #<== Notice this uses pythons dot notation to describe the path
+```

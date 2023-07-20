@@ -4,7 +4,6 @@ from rest_framework.test import APITestCase
 import json
 
 
-
 """
 This test will send a post request to signup to first create a new user and 
 acquire the token provided in the response. Then it will set the token under the 
@@ -21,7 +20,7 @@ This endpoint must return the following Response status code of 200
 answer = {
     "cart_items": [
         {
-            "id": 4,
+            "id": 2,
             "item": {
                 "id": 10,
                 "category": "Other",
@@ -31,7 +30,7 @@ answer = {
             "quantity": 1,
         },
         {
-            "id": 5,
+            "id": 3,
             "item": {
                 "id": 9,
                 "category": "Other",
@@ -41,7 +40,7 @@ answer = {
             "quantity": 1,
         },
         {
-            "id": 6,
+            "id": 4,
             "item": {
                 "id": 3,
                 "category": "Electronics",
@@ -51,7 +50,7 @@ answer = {
             "quantity": 1,
         },
         {
-            "id": 7,
+            "id": 5,
             "item": {
                 "id": 5,
                 "category": "Books",
@@ -87,6 +86,7 @@ class Test_cart_items_and_total_price(APITestCase):
         self.client.post(reverse("an_item", args=[3]))
         self.client.post(reverse("an_item", args=[5]))
         response = self.client.get(reverse("cart"))
+        # print(response.content)
         with self.subTest():
             self.assertEquals(response.status_code, 200)
         self.assertEquals(json.loads(response.content), answer)
