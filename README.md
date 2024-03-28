@@ -1,4 +1,4 @@
-# Assessment 3: DJANGO API
+# DJANGO API Assessment
 
 ![Alt Text](./resources/ecom.png)
 
