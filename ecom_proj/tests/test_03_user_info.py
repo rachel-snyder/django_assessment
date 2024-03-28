@@ -7,7 +7,7 @@ import json
 
 """
 This test will send a post request to signup to first create a new user and 
-acquire the token provided in the response. Then it will se the token under the 
+acquire the token provided in the response. Then it will send the token under the 
 AUTHORIZATION HEADER of the next request where the APIView will utilize TokenAuthentication
 to authenticate the user.
 
@@ -30,5 +30,5 @@ class Test_user_info(APITestCase):
         self.client.credentials(HTTP_AUTHORIZATION=f"Token {response_body['token']}")
         response = self.client.get(reverse("info"))
         with self.subTest():
-            self.assertEquals(response.status_code, 200)
-        self.assert_(b"fr@fr.com" in response.content)
+            self.assertEqual(response.status_code, 200)
+        self.assertTrue(b'{"email":"fr@fr.com"}' in response.content)

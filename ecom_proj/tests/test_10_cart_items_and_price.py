@@ -1,6 +1,7 @@
 from django.test import Client
 from django.urls import reverse
 from rest_framework.test import APITestCase
+from cart_app.models import Cart_item
 import json
 
 
@@ -8,9 +9,9 @@ import json
 This test will send a post request to signup to first create a new user and 
 acquire the token provided in the response. Then it will set the token under the 
 AUTHORIZATION HEADER of the next request where the APIView will utilize TokenAuthentication
-to authenticate the user and delete this users Token.
+to authenticate the user.
 
-The client will then send a mix of POST and DELETE requests to the endpoint of "an_item" and 
+The client will then send a mix of POST and DELETE requests to the endpoint of "an_item" 
 to build the clients cart. 
 The client will send a GET request to the endpoint with the name of "cart" and receive a 
 dictionary with the keys of cart_items(holds a list of cart_items) and total_price(Remember to multiply item price by
@@ -88,5 +89,5 @@ class Test_cart_items_and_total_price(APITestCase):
         response = self.client.get(reverse("cart"))
         # print(response.content)
         with self.subTest():
-            self.assertEquals(response.status_code, 200)
-        self.assertEquals(json.loads(response.content), answer)
+            self.assertTrue(response.status_code ==200 and len(Cart_item.objects.all()) == 4)
+        self.assertEqual(json.loads(response.content), answer)

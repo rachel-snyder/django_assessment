@@ -10,7 +10,7 @@ from rest_framework.authtoken.models import Token
 This test will send a post request to signup to first create a new user and 
 acquire the token provided in the response. Then it will set the token under the 
 AUTHORIZATION HEADER of the next request where the APIView will utilize TokenAuthentication
-to authenticate the user and delete this users Token. Then the user will sent a POST request
+to authenticate the user. Then the user will send a POST request
 to logout to force the deletion of their Token.
 
 This endpoint must return the following Response status code of 204 
@@ -31,5 +31,5 @@ class Test_user_logout(APITestCase):
         response = self.client.post(reverse("logout"))
         with self.subTest():
             tokens = Token.objects.all()
-            self.assertEquals(len(tokens), 0)
-        self.assertEquals(response.status_code, 204)
+            self.assertEqual(len(tokens), 0)
+        self.assertEqual(response.status_code, 204)

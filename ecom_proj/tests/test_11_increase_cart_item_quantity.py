@@ -8,7 +8,7 @@ import json
 This test will send a post request to signup to first create a new user and 
 acquire the token provided in the response. Then it will set the token under the 
 AUTHORIZATION HEADER of the next request where the APIView will utilize TokenAuthentication
-to authenticate the user and delete this users Token.
+to authenticate the user.
 
 The client will send a mix of POST and DELETE request to the endpoint with the name of "an_item" to build
 the clients cart. 
@@ -94,5 +94,5 @@ class Test_increase_cart_item(APITestCase):
         response = self.client.get(reverse("cart"))
         # print(response.content)
         with self.subTest():
-            self.assertEquals(response.status_code, 200)
-        self.assertEquals(json.loads(response.content), answer)
+            self.assertEqual(response.status_code, 200)
+        self.assertEqual(json.loads(response.content), answer)

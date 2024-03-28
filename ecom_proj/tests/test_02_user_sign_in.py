@@ -30,7 +30,7 @@ class Test_user_login_up(TestCase):
         )
         # print(response.content)
         with self.subTest():
-            self.assertEquals(response.status_code, 200)
-        self.assert_(
+            self.assertEqual(response.status_code, 200)
+        self.assertTrue(
             b'"client":"fr@fr.com"' in response.content and b"token" in response.content
         )

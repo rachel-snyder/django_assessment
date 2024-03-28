@@ -9,7 +9,7 @@ import json
 This test will send a post request to signup to first create a new user and 
 acquire the token provided in the response. Then it will set the token under the 
 AUTHORIZATION HEADER of the next request where the APIView will utilize TokenAuthentication
-to authenticate the user and delete this users Token.
+to authenticate the user.
 
 The client will then send a GET request to the endpoint of name "an_item" with the
 number 10 being passed as the item_id.
@@ -41,5 +41,5 @@ class Test_item_by_id(APITestCase):
         self.client.credentials(HTTP_AUTHORIZATION=f"Token {response_body['token']}")
         response = self.client.get(reverse("an_item", args=[10]))
         with self.subTest():
-            self.assertEquals(response.status_code, 200)
-        self.assertEquals(json.loads(response.content), answer)
+            self.assertEqual(response.status_code, 200)
+        self.assertEqual(json.loads(response.content), answer)

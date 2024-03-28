@@ -9,12 +9,10 @@ import json
 This test will send a post request to signup to first create a new user and 
 acquire the token provided in the response. Then it will set the token under the 
 AUTHORIZATION HEADER of the next request where the APIView will utilize TokenAuthentication
-to authenticate the user and delete this users Token.
+to authenticate the user.
 
 The client will then send a GET request to the endpoint with the name "items_by_category" 
-and pass "electronics" as the Category argument. Keep in mind we are passing a lower case
-string and our categories are in title format so you may want to ensure you're accounting for
-special casing. This endpoint must return the following Response status code of 200
+and pass "electronics" as the Category argument. This endpoint must return the following Response status code of 200
 """
 
 answer = [
@@ -68,5 +66,5 @@ class Test_item_by_category(APITestCase):
         self.client.credentials(HTTP_AUTHORIZATION=f"Token {response_body['token']}")
         response = self.client.get(reverse("items_by_category", args=['electronics']))
         with self.subTest():
-            self.assertEquals(response.status_code, 200)
-        self.assertEquals(json.loads(response.content), answer)
+            self.assertEqual(response.status_code, 200)
+        self.assertEqual(json.loads(response.content), answer)

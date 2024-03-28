@@ -10,7 +10,7 @@ from cart_app.models import Cart_item
 This test will send a post request to signup to first create a new user and 
 acquire the token provided in the response. Then it will set the token under the 
 AUTHORIZATION HEADER of the next request where the APIView will utilize TokenAuthentication
-to authenticate the user and delete this users Token.
+to authenticate the user.
 
 The client will then send a DELETE request to the endpoint with the name of "an_item"
 and pass in the number 10 as the item_id. This will delete any Cart_Item that has a relationship
@@ -34,5 +34,5 @@ class Test_item_removed_from_cart(APITestCase):
         self.client.post(reverse("an_item", args=[10]))
         response = self.client.delete(reverse("an_item", args=[10]))
         with self.subTest():
-            self.assertEquals(len(Cart_item.objects.all()), 0)
-        self.assertEquals(response.status_code, 204)
+            self.assertEqual(len(Cart_item.objects.all()), 0)
+        self.assertEqual(response.status_code, 204)
